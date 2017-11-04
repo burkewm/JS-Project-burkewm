@@ -7,10 +7,10 @@
 "zip" : "45248",
 
 "review" : [{
-    "text" : "Burger Palace, it's only just okay."
+    "text" : " - Burger Palace, it's only just okay."
     },
     {
-    "text" : "The janitor yelled at me"
+    "text" : " - The janitor yelled at me"
     }],
 "rating" : "2"
     },
@@ -21,7 +21,7 @@
 "state" : "MI",
 "zip" : "48075",
 "review" : [{
-"text" : "It sure isn't Burger King, that's for sure." 
+"text" : " - It sure isn't Burger King, that's for sure." 
 
 }],
 "rating" : "9"

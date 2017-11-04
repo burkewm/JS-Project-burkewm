@@ -9,6 +9,7 @@ var Restaurant = {
     
     window.onload = function() {
         var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "/cuisines", true);
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
@@ -17,7 +18,6 @@ var Restaurant = {
                 getRestaurants(cuisines[0]);
             }
         };
-        xmlhttp.open("GET", "/cuisines", true);
         xmlhttp.send(null);
     };
     
@@ -59,6 +59,7 @@ var Restaurant = {
         var restaurants = [];
     
         var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "/restaurants/" + selectedCuisine, true);
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var values = JSON.parse(xmlhttp.responseText);
@@ -69,7 +70,6 @@ var Restaurant = {
                 showRestaurants(restaurants);
             }
         };
-        xmlhttp.open("GET", "/restaurants/" + selectedCuisine, true);
         xmlhttp.send(null);
     }
     
@@ -118,6 +118,14 @@ var Restaurant = {
             }
             //Create rating element
             var ratings = document.createElement("p");
+
+            /* If You Wanted to do a Star based system \*
+            for(s= 0; s < restaurants[i].rating; s++){
+                ratings.innerText += "*";
+            }
+            ratings.innerText += " / 5";
+            \*                 END                    */
+            
             ratings.innerText = "Rating: " + restaurants[i].rating + "/5";
             reviewDiv.appendChild(ratings);
             info.appendChild(reviewDiv);
